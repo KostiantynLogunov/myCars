@@ -1,0 +1,16 @@
+nav{
+    margin-top:20px;
+}
+nav a{
+    text-decoration: none;
+    display: inline-block;
+    margin: 3px;
+    padding:10px 25px;
+    border: 1px solid coral;
+}
+nav a:hover{
+    background-color: rgba(255, 127, 80, 0.49);
+}
+nav a.selected{
+    background-color: coral;
+}

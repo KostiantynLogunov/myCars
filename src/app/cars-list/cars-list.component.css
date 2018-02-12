@@ -1,0 +1,8 @@
+.close {
+     display: none;
+     /*visibility: hidden;*/
+ }
+.checkboxes {
+    display: flex;
+    justify-content: space-around;
+}

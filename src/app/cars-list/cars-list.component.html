@@ -1,0 +1,49 @@
+<hr>
+<div class="row">
+    <div class="col-4">
+        <div class="form-group w-75">
+            <label for="filter"><b>Filter of Models</b></label>
+            <input type="text" class="form-control" id="filter" [(ngModel)]="searchCar" maxlength="20">
+        </div>
+
+        <div class="form-group w-75">
+            <label for="filter2"><b>Filter of colors</b></label>
+            <input type="text" class="form-control" id="filter2" [(ngModel)]="searchColor"  maxlength="10">
+        </div>
+
+    </div>
+
+    <div class="col-8">
+
+        <div class="checkboxes">
+            <span *ngFor="let header of headers" >
+                <label>{{ header.name }}</label>
+                <input type="checkbox" checked (change)="showHide(header.id)">
+            </span>
+        </div>
+
+            <table class="table table-hover table-dark small">
+          <!--  <thead>
+            <tr>
+                <th *ngFor="let header of headers" let i = index>
+
+                    <span>{{ header.name}}</span>
+                </th>
+            </tr>
+            </thead>-->
+            <tbody>
+                <tr *ngFor="let car of cars | carFilter:searchCar | carFilter2:searchColor; let i = index">
+                    <th [ngClass] = "{'close': !colId}">{{ i+1 }}</th>
+                    <td [ngClass] = "{'close': !colName}">{{ car.name }}</td>
+                    <td [ngClass] = "{'close': !colColor}">{{ car.color }}</td>
+                    <td [ngClass] = "{'close': !colSpeed}">{{ car.maxspeed }}</td>
+                    <td [ngClass] = "{'close': !colPrice}">{{ car.price }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <hr>
+
+
+
+</div>
